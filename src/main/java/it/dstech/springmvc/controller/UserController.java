@@ -33,7 +33,7 @@ import it.dstech.springmvc.service.UserService;
 
 
 @Controller
-@RequestMapping("/User")
+@RequestMapping("/")
 @SessionAttributes("roles")
 public class UserController {
 
@@ -62,7 +62,7 @@ public class UserController {
 		List<User> users = userService.findAllUsers();
 		model.addAttribute("users", users);
 		model.addAttribute("loggedinuser", getPrincipal());
-		return "userslist";
+		return "management";
 	}
 
 	/**
@@ -186,9 +186,13 @@ public class UserController {
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String loginPage() {
 		if (isCurrentAuthenticationAnonymous()) {
-			return "index";
+			return "login";
 	    } else {
-	    	return "redirect:/list";  
+//	    	return "redirect:/list";  
+		System.out.println("CIAO");
+		return "redirect:/list";
+    	//return "redirect:/management";
+	    	
 	    }
 	}
 	
