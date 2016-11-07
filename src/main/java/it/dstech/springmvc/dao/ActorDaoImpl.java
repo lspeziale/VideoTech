@@ -4,11 +4,11 @@ import java.util.List;
 
 import org.hibernate.Criteria;
 import org.hibernate.Hibernate;
-
 import org.hibernate.criterion.Restrictions;
-
+import org.springframework.stereotype.Repository;
 import it.dstech.springmvc.model.Actor;
 
+@Repository("actorDao")
 public class ActorDaoImpl extends AbstractDao<Integer, Actor> implements ActorDao {
 
 	@Override

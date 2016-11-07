@@ -4,11 +4,11 @@ import java.util.List;
 
 import org.hibernate.Criteria;
 import org.hibernate.Hibernate;
-
 import org.hibernate.criterion.Restrictions;
-
+import org.springframework.stereotype.Repository;
 import it.dstech.springmvc.model.Director;
 
+@Repository("directorDao")
 public class DirectorDaoImpl extends AbstractDao<Integer, Director> implements DirectorDao {
 
 	@Override

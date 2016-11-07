@@ -4,10 +4,11 @@ import java.util.List;
 
 import org.hibernate.Criteria;
 import org.hibernate.Hibernate;
-
 import org.hibernate.criterion.Restrictions;
+import org.springframework.stereotype.Repository;
 import it.dstech.springmvc.model.Genre;
 
+@Repository("genreDao")
 public class GenreDaoImpl extends AbstractDao<Integer, Genre> implements GenreDao {
 
 	@Override
