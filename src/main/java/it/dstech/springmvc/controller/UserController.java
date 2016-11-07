@@ -186,17 +186,21 @@ public class UserController {
 	@RequestMapping(value = "/login", method = RequestMethod.GET)
 	public String loginPage() {
 		if (isCurrentAuthenticationAnonymous()) {
+			System.out.println("******************************************************************");
+			System.out.println("*************ANONIMOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO**********");
+			System.out.println("******************************************************************");
 			return "login";
 	    } else {
-//	    	return "redirect:/list";  
-		System.out.println("CIAO");
+			System.out.println("******************************************************************");
+			System.out.println("*************ENTRAAATTOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOO**********");
+			System.out.println("******************************************************************");
 		return "redirect:/list";
     	//return "redirect:/management";
 	    	
 	    }
 	}
 	
-	/*********************** FAKE LOGIN *************************/
+	/*********************** FAKE LOGIN ************************
 	@RequestMapping(value = "/signin", method = RequestMethod.GET)
 	public String login(ModelMap model, @RequestParam(value = "username") String username, @RequestParam(value = "password") String password) {
 		if ((username.equals("admin"))&&(password.equals("pw123"))) {
@@ -207,7 +211,7 @@ public class UserController {
 	    } else {
 	    	return "/";  
 	    }
-	}
+	}*/
 
 	/**
 	 * This method handles logout requests.
@@ -244,6 +248,7 @@ public class UserController {
 	 */
 	private boolean isCurrentAuthenticationAnonymous() {
 	    final Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+	    System.out.println("ANONIMO: "+authenticationTrustResolver.isAnonymous(authentication));
 	    return authenticationTrustResolver.isAnonymous(authentication);
 	}
 

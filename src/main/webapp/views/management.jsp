@@ -55,7 +55,7 @@ input[type=text] {
 	<div class="generic-container">
 		<div class="authbar">
 			<span><font size="3">Welcome <b>Admin</b>.
-			</font></span> <span class="floatRight"> <a href="<c:url value='/' />"><button
+			</font></span> <span class="floatRight"> <a href="<c:url value='/logout' />"><button
 						type="button" class="btn btn-info active">Logout</button></a>
 			</span>
 
