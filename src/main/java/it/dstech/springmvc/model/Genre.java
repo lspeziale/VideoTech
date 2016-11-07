@@ -28,11 +28,11 @@ public class Genre implements Serializable {
 	private Integer genreId;
 
 	@NotEmpty
-	@Column(name = "GENRE", unique = true, nullable = false)
+	@Column(name = "GENRE", nullable = false)
 	private String genre;
 
 	@NotEmpty
-	@Column(name = "DESCRIPTION", unique = true, nullable = true)
+	@Column(name = "DESCRIPTION", nullable = true)
 	private String description;
 
 	@ManyToMany(mappedBy = "genreList")

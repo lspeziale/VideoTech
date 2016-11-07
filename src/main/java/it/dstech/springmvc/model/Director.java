@@ -30,11 +30,11 @@ public class Director implements Serializable {
 	private Integer directorId;
 
 	@NotEmpty
-	@Column(name = "FIRST_NAME", unique = true, nullable = false)
+	@Column(name = "FIRST_NAME", nullable = false)
 	private String firstName;
 
 	@NotEmpty
-	@Column(name = "LAST_NAME", unique = true, nullable = false)
+	@Column(name = "LAST_NAME", nullable = false)
 	private String lastName;
 
 	@OneToMany(mappedBy = "director")
