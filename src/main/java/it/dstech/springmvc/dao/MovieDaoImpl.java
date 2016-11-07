@@ -3,7 +3,7 @@ package it.dstech.springmvc.dao;
 import java.util.List;
 
 import org.hibernate.Criteria;
-import org.hibernate.Hibernate;
+
 import org.hibernate.criterion.Order;
 import org.hibernate.criterion.Restrictions;
 import org.slf4j.Logger;
@@ -11,7 +11,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
 import it.dstech.springmvc.model.Movie;
-import it.dstech.springmvc.model.User;
 
 @Repository("movieDao")
 public class MovieDaoImpl extends AbstractDao<Integer, Movie> implements MovieDao {
@@ -27,7 +26,7 @@ public class MovieDaoImpl extends AbstractDao<Integer, Movie> implements MovieDa
 	@Override
 	public void save(Movie movie) {
 		persist(movie);
-		
+
 	}
 
 	@Override
@@ -36,7 +35,7 @@ public class MovieDaoImpl extends AbstractDao<Integer, Movie> implements MovieDa
 		crit.add(Restrictions.eq("title", title));
 		Movie movie = (Movie) crit.uniqueResult();
 		delete(movie);
-		
+
 	}
 
 	@Override
@@ -52,8 +51,6 @@ public class MovieDaoImpl extends AbstractDao<Integer, Movie> implements MovieDa
 		// Uncomment below lines for eagerly fetching of userProfiles if you
 		// want.
 
-		
-
 		return movieList;
 	}
 
@@ -62,10 +59,8 @@ public class MovieDaoImpl extends AbstractDao<Integer, Movie> implements MovieDa
 		Criteria crit = createEntityCriteria();
 		crit.add(Restrictions.eq("title", title));
 		Movie movie = (Movie) crit.uniqueResult();
-	
+
 		return movie;
 	}
-
-	
 
 }
