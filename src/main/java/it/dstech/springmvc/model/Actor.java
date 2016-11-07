@@ -28,11 +28,11 @@ public class Actor implements Serializable {
 	private Integer actorId;
 
 	@NotEmpty
-	@Column(name = "FIRST_NAME", unique = true, nullable = false)
+	@Column(name = "FIRST_NAME", nullable = false)
 	private String firstName;
 
 	@NotEmpty
-	@Column(name = "LAST_NAME", unique = true, nullable = false)
+	@Column(name = "LAST_NAME", nullable = false)
 	private String lastName;
 
 	@ManyToMany(mappedBy = "actorList")

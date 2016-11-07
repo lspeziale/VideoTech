@@ -36,11 +36,11 @@ public class Movie implements Serializable {
 	private String title;
 
 	@NotEmpty
-	@Column(name = "YEAR", unique = true, nullable = false)
+	@Column(name = "YEAR", nullable = false)
 	private Integer year;
 
 	@NotEmpty
-	@Column(name = "DURATION", unique = true, nullable = false)
+	@Column(name = "DURATION", nullable = false)
 	private Integer duration;
 
 	@ManyToMany
